@@ -94,7 +94,7 @@ def elastic_net(predictors, target, balance, memlimit=None,
     # Call the Fortran wrapper.
     lmu, a0, ca, ia, nin, rsq, alm, nlp, jerr =  \
             _glmnet.elnet(balance, predictors, target, weights, jd, vp,
-                          memlimit, flmin, ulam, thr, nlam=nlam)
+                          memlimit, flmin, ulam, thr, nlam=nlam, isd=isd)
     
     # Check for errors, documented in glmnet.f.
     if jerr != 0:
